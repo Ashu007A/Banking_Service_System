@@ -1,7 +1,6 @@
 package bankingSystem;
 
-public class         LotakBank implements RBIBankInterface {
-
+public class LotakBank implements RBIBankInterface {
 
     private String accountNo;
 
@@ -11,57 +10,60 @@ public class         LotakBank implements RBIBankInterface {
 
     private double rateOfInterest = 7.5;
 
-    public LotakBank(String accountNo,String password,double balance){
+    public LotakBank(String accountNo, String password, double balance) {
 
         this.accountNo = accountNo;
         this.password = password;
         this.balance = balance;
+
+        System.out.println("Account created successfully!");
+        System.out.println("Account no. - " + this.accountNo + "\nBalance - " + this.balance + "/- \n");
     }
 
-    public String depositMoney(int money) {
+    public void depositMoney(int money) {
 
-        if(money>0){
+        if (money > 0) {
             balance = balance + money;
-            return "Money :"+money+" has been added to your account. Total " +
-                    "balance is"+balance;
+            System.out.println("Amount of " + money + "/- has been added to your account. \nTotal balance is " + balance + "/- \n");
         }
-        else{
-            return "Money entered is negative";
+        else {
+            System.out.println("Money entered is negative \n");
         }
     }
 
-    public String withdrawMoney(int money, String password) {
+    public void withdrawMoney(int money, String password) {
 
-        if(password.equals(this.password)){
-            if(balance>=money){
+        if (password.equals(this.password)) {
+            if(balance >= money){
                 balance = balance - money;
-                return "Money :"+money+" has been withdrawn. Remaining balance is "+balance;
+                System.out.println("Amount of " + money + "/- has been withdrawn. \nRemaining balance is " + balance + "/- \n");;
 
-            }else{
-                return "Inti Dhanrashi nhi hai Bank Account Mein";
+            }
+            else {
+                System.out.println("You don't have enough balance to withdraw entered amount! \n");;
             }
 
-        }else{
-
-            return "Wrong password entered";
+        }
+        else {
+            System.out.println("Wrong password entered \n");;
         }
     }
 
-    public String checkBalance(String password) {
+    public void checkBalance(String password) {
 
-        if(this.password.equals(password)){
-            return "The balance is "+this.balance;
-        }else{
-            return "Wrong password entered";
+        if (this.password.equals(password)) {
+            System.out.println("The balance is " + this.balance + "/- \n");;
+        }
+        else {
+            System.out.println("Wrong password entered \n");;
         }
     }
 
-    public Double calculateTotalInterest(int time) {
+    public void calculateTotalInterest(int time) {
 
-        Double simpleInterest = (balance*time*rateOfInterest)/100;
+        Double simpleInterest = (Double) ((balance * time * rateOfInterest) / 100);
 
-        return simpleInterest;
-
+        System.out.println("You'll get interest of - " + simpleInterest + "/- \n");
     }
 }
 

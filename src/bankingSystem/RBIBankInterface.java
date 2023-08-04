@@ -2,14 +2,12 @@ package bankingSystem;
 
 public interface RBIBankInterface {
 
+    public void depositMoney(int money);
 
-    public String depositMoney(int money);
+    public void withdrawMoney(int money,String password);
 
-    public String withdrawMoney(int money,String password);
+    public void checkBalance(String password);
 
-    public String checkBalance(String password);
-
-    public Double calculateTotalInterest(int time);
-
+    public void calculateTotalInterest(int time);
 }
 
