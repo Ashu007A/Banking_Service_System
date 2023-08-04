@@ -56,7 +56,7 @@ public class Main {
                     bankAccount.calculateTotalInterest(tenure);
                 }
                 else if (choose == 5){
-                    System.out.println("Thank you for using our service!");
+                    System.out.println("Thank you for using our service. Have a great day!");
                     System.exit(0);
                 }
                 else {
@@ -66,7 +66,7 @@ public class Main {
         }
         else if (option == 2) {
             System.out.println("Welcome to SBI Bank!");
-            
+
             bankAccount = new SBIBank(stringVersion, password, (double) initialBalance);
 
             while (true) {
@@ -92,7 +92,7 @@ public class Main {
                     Integer tenure = (Integer) sc.nextInt();
                     bankAccount.calculateTotalInterest(tenure);
                 } else if (choose == 5) {
-                    System.out.println("Thank you for using our service!");
+                    System.out.println("Thank you for using our service. Have a great day!");
                     System.exit(0);
                 } else {
                     System.out.println("Invalid option. Please choose a valid option!");
